@@ -1,0 +1,10 @@
+node_modules/
+dist/
+coverage/
+logs/
+.env
+.env.*
+!.env.example
+config/allowlist.json
+*.log
+.DS_Store

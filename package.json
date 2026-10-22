@@ -1,0 +1,56 @@
+{
+  "name": "companion-editor-mcp",
+  "version": "0.1.1",
+  "private": true,
+  "description": "Security-gated MCP server for Bitfocus Companion 5.1, with button, feedback-style and trigger editing",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "companion-editor-mcp": "dist/index.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "audit": "npm audit --audit-level=high",
+    "secrets": "gitleaks detect --no-banner --redact",
+    "check": "npm run typecheck && npm run lint && npm run format:check && npm run build && npm run test:coverage && npm run audit && npm run secrets",
+    "prepare": "husky || true"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "@types/ws": "8.18.2",
+    "@vitest/coverage-v8": "5.0.3",
+    "eslint": "10.12.0",
+    "eslint-plugin-security": "4.2.0",
+    "husky": "9.1.7",
+    "lint-staged": "17.6.0",
+    "prettier": "3.9.9",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.71.1",
+    "vitest": "5.0.3",
+    "ws": "8.22.0"
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "prettier --write",
+      "eslint --max-warnings=0"
+    ],
+    "*.{json,md,yml}": [
+      "prettier --write"
+    ]
+  },
+  "author": "davidadevore",
+  "license": "MIT"
+}

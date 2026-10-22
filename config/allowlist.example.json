@@ -1,0 +1,36 @@
+{
+  "buttons": [
+    {
+      "page": 1,
+      "row": 0,
+      "column": 0,
+      "label": "Program: Camera 1",
+      "risk": "low"
+    },
+    {
+      "page": 1,
+      "row": 0,
+      "column": 1,
+      "label": "Program: Camera 2",
+      "risk": "low"
+    },
+    {
+      "page": 1,
+      "row": 1,
+      "column": 0,
+      "label": "Play walk-in music",
+      "risk": "low"
+    },
+    {
+      "page": 1,
+      "row": 3,
+      "column": 7,
+      "label": "STREAM STOP",
+      "risk": "high"
+    }
+  ],
+  "variables": ["cue", "speaker_name"],
+  "connections": ["replace-with-id-from-list_connections"],
+  "surfaces_rescan": false,
+  "pages_create": false
+}
